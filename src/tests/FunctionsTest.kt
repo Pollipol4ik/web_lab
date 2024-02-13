@@ -5,6 +5,7 @@ import interfaces.Functions
 import org.testng.Assert.assertEquals
 import org.testng.annotations.Test
 
+
 class FunctionsTest {
     private val functions: Functions = FunctionsImpl()
     @Test
@@ -28,7 +29,7 @@ class FunctionsTest {
     @Test
     fun uniqueCounterTest() {
         assertEquals(mapOf("a" to 3, "b" to 1, "c" to 1), functions.uniqueCounter("a, a, a, b, c", ", "))
-        assertEquals(mapOf("a," to 3, "b," to 1, "c," to 1), functions.uniqueCounter("a, a, a, b, c", " "))
+        assertEquals(mapOf("a," to 3, "b," to 1, "c" to 1), functions.uniqueCounter("a, a, a, b, c", " "))
     }
     @Test
     fun isPalindromeTest() {
@@ -42,7 +43,5 @@ class FunctionsTest {
         assertEquals("dcba", functions.invert("abcd"))
         assertEquals(" ", functions.invert(" "))
         assertEquals("", functions.invert(""))
-
-
     }
 }
